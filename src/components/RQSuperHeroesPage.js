@@ -1,29 +1,39 @@
-import { useQuery } from "react-query";
-import axios from "axios";
 
-const fetchSuperheroes = () => {
-  return axios.get("http://localhost:4000/superheros");
-};
+import { UseSuperHeroesData } from "../Hooks/UseSuperHeroesData";
 
 export const RQSuperHeroesPage = () => {
-  const { isLoading, data,isError, error,isFetching } = useQuery("super-heroes", fetchSuperheroes ,
-  {
-    cacheTime:5000,
-  });
+  const onSuccess = () => {
+    console.log('Perform side effect after data fetching',data);
+  };
+  const onError = (error) => {
+    console.log('Perform side effect after encountering error',error);
+  };
 
-  console.log({isLoading,isFetching})
-  if (isLoading) {
-    <h2>Loading...</h2>;
-  } 
-  if(isError){
+  const { isLoading, data, isError, error, isFetching, refetch } = UseSuperHeroesData(onSuccess,onError)
+
+  console.log({ isLoading, isFetching })
+  
+  
+  if (isLoading || isFetching) {
+    return <h2>Loading...</h2>
+  }
+
+
+  if (isError) {
     <h2>{error.message}</h2>
   }
+
+
   return (
     <>
       <h2>RQ SuperHeroes Page</h2>
-      {data?.data.map((hero) => {
+      <button onClick={refetch}>Fetch Heroes</button>
+      {/* {data?.data.map((hero) => {
         return <div key={hero.name}>{hero.name}</div>;
-      })}
+      })} */}
+        {data.map((heroName) => {
+          return <div key={heroName}>{heroName}</div>
+        })}
     </>
   );
 };
