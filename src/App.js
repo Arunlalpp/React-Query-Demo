@@ -1,17 +1,21 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {QueryClientProvider,QueryClient} from 'react-query';
 import "./App.css";
 import { Homepage } from "./components/Homepage";
 import { RQSuperHeroesPage } from "./components/RQSuperHeroesPage";
 import { SuperHeroes } from "./components/SuperHeroes";
 
+const queryClient = new QueryClient()
+
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <Router>
       <div>
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/Homepage">Home</Link>
             </li>
             <li>
               <Link to="/SuperHeroes">Traditional Super Heroes</Link>
@@ -28,6 +32,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </QueryClientProvider>
   );
 }
 
