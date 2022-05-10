@@ -1,28 +1,34 @@
-import {useState,useEffect} from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-export const  SuperHeroes = () => {
-  const[isloading,setIsLoading] = useState(true)
-  const[data,setData] = useState([])
-
+export const SuperHeroes = () => {
+  const [isloading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [error,setError] = useState('')
 
   useEffect(() => {
-    axios.get('http://localhost:4000/superheros').then((res) => {
-      setData(res.data)
+    axios.get("http://localhost:4000/superheros").then((res) => {
+      setData(res.data);
+      setIsLoading(false);
+    }).catch(error => {
+      setError(error.message)
       setIsLoading(false)
     })
-  }, [])
+  }, []);
 
   if (isloading) {
-    return <h2>Loading.....</h2>
+    return <h2>Loading.....</h2>;
   }
-    return (
-      <>
+
+  if(error){
+    return <h2>{error}</h2>
+  }
+  return (
+    <>
       <h2>Super Heroes Pages</h2>
-      {data.map((hero) =>{
-        return<div key={hero.name}>{hero.name}</div>
+      {data.map((hero) => {
+        return <div key={hero.name}>{hero.name}</div>;
       })}
-      </>
-    )
-    }
-  
+    </>
+  );
+};
