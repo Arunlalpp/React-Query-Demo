@@ -1,19 +1,53 @@
 {
-"superheros": [
-    {
-        "id": 1,
-        "name": "Arunlal",
-        "Dep": "cs"
-    },
-    {
-        "id": 2,
-        "name": "Joseph",
-        "Dep": "cs"
-    },
-    {
-        "id": 3,
-        "name": "Subin",
-        "Dep": "cs"
-    }
-]
+    "superheros": [
+        {
+            "id": 1,
+            "name": "Batman",
+            "Dep": "Bruce-wayne"
+        },
+        {
+            "id": 2,
+            "name": "Superman",
+            "Dep": "Clerk-Kent"
+        },
+        {
+            "id": 3,
+            "name": "wonder-Women",
+            "Dep": "Princess-Daina"
+        }
+    ],
+    "friends": [
+        {
+            "id": 1,
+            "name": "Arunlalpp"
+        },
+        {
+            "id": 2,
+            "name": "Subin"
+        },
+        {
+            "id": 3,
+            "name": "Shuhaib"
+        },
+        {
+            "id": 4,
+            "name": "Rameez"
+        }
+    ],
+    "users": [
+        {
+            "id": "email@email.com",
+            "channelId": "codevalution"
+        }
+    ],
+    "channels": [
+        {
+            "id": "codevalution",
+            "courses": [
+                "react",
+                "vue",
+                "angular"
+            ]
+        }
+    ]
 }
