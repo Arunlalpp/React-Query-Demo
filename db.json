@@ -16,9 +16,14 @@
       "Dep": "Princess-Daina"
     },
     {
-      "name": "lal",
-      "dep": "lal",
-      "id": 4
+      "name": "Arunlalpp",
+      "dep": "PP",
+      "id": 5
+    },
+    {
+      "name": "ArunChandra",
+      "dep": "123",
+      "id": 6
     }
   ],
   "friends": [

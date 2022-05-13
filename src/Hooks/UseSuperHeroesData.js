@@ -13,7 +13,7 @@ export const UseSuperHeroesData = (onSuccess, onError) => {
     onSuccess,
     onError,
     select: (data) => {
-      // const superHeroNames = data.data.map((hero) => hero.name);
+      // const superHeroNames = data.data.map((hero) => hero.name); 
       // return superHeroNames;
       return data.data;
     },

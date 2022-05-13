@@ -13,8 +13,8 @@ export const useSuperHeroData = (heroId) => {
   return useQuery(['super-heros', heroId], fetchSuperHero, {
 
     initialData: () => {
-      const hero =queryClient
-      .geQuerytData('superheros')
+      const hero = queryClient
+      .getQuerytData('super-heros')
       ?.data?.find((hero) => hero.id === parseInt(heroId)) 
       if(hero) {
         return {data: hero}
