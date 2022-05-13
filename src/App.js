@@ -33,11 +33,26 @@ function App() {
             </ul>
           </nav>
           <Routes>
-          <Route path="/InfiniteQueriesPage" element={<InfiniteQueriesPage />}></Route>
-          <Route path="/PaginatedQueriesPage" element={<PaginatedQueriesPage />}></Route>
-          <Route path="/DependentQueriesPage" element={<DependentQueriesPage email='email@email.com' />}></Route>
-            <Route path="DynamicParallelPage" element={<DynamicParallelPage heroIds={[1,3]}/>}></Route>
-            <Route path="/ParallelQueriesPage" element={<ParallelQueriesPage />}></Route>
+            <Route
+              path="/InfiniteQueriesPage"
+              element={<InfiniteQueriesPage />}
+            ></Route>
+            <Route
+              path="/PaginatedQueriesPage"
+              element={<PaginatedQueriesPage />}
+            ></Route>
+            <Route
+              path="/DependentQueriesPage"
+              element={<DependentQueriesPage email="email@email.com" />}
+            ></Route>
+            <Route
+              path="DynamicParallelPage"
+              element={<DynamicParallelPage heroIds={[1, 3]} />}
+            ></Route>
+            <Route
+              path="/ParallelQueriesPage"
+              element={<ParallelQueriesPage />}
+            ></Route>
             <Route
               path="/RQSuperHeroesPage/:heroId"
               element={<RQSuperHeroPage />}
