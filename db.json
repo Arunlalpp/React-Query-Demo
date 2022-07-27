@@ -15,6 +15,7 @@
       "name": "wonder-Women",
       "Dep": "Princess-Daina"
     },
+    
     {
       "name": "Arunlalpp",
       "dep": "PP",
@@ -42,6 +43,22 @@
     {
       "id": 4,
       "name": "Rameez"
+    }
+  ],
+  "users": [
+    {
+      "id": "email@email.com",
+      "channelId": "codevalution"
+    }
+  ],
+  "channels": [
+    {
+      "id": "codevalution",
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
     }
   ],
   "users": [
